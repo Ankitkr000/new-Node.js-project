@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const signSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     Username: {
         type: String,
         minlength: 1,
@@ -15,9 +15,9 @@ const signSchema = new mongoose.Schema({
         maxlength: 16
     },
     DateOfBirth: {
-        type: Date,
-        required: true
+        type: String,
+        minlength: 1
     }
 });
 
-module.exports = mongoose.model("Signup", signSchema);
+module.exports = mongoose.model("User", userSchema);
